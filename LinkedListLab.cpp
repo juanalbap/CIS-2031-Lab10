@@ -40,6 +40,10 @@ void prepend(List* &list, string val){
 void removeFirst(List* &list){
     //❓ Lab Question 9
     //YOUR CODE HERE
+    List* firstElement = list;
+    list = list->next;
+    delete firstElement ;
+    
 }
 
 //This function returns true if the list haystck
@@ -76,6 +80,7 @@ void main(){
 
     //❓ Lab Question 6
     // YOUR CODE TO REMOVE TURNIPS HERE:
+    removeFirst(dinner);
     printList(dinner);
 
     //❓ Lab Question 10
