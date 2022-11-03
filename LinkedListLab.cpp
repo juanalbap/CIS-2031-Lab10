@@ -42,7 +42,8 @@ void removeFirst(List* &list){
     //YOUR CODE HERE
     List* firstElement = list;
     list = list->next;
-    delete firstElement ;
+    delete firstElement;
+    firstElement = NULL;
     
 }
 
@@ -50,18 +51,30 @@ void removeFirst(List* &list){
 //contains the value needle, and false otherwise.
 bool contains(List* haystack, string needle){
     //❓ Lab Question 10
-    //YOUR CODE HERE
+    while(haystack != NULL){
+        if(haystack->value == needle){
+            return true;
+        } else {
+            haystack = haystack->next;
+        }
+    }
     return false;
 }
 
 void insertAt(List* &list, int pos, string value){
     //❓ Lab Question 11
-    //YOUR CODE HERE
+    if(list == NULL){
+        list = new List{value};
+    } else {
+        for(int i = 0; i < pos; i++){
+            list->next;
+        }
+    }
 }
 
-void deleteAt(List* &list, int pos, string value){
+void deleteAt(List* &list, int pos){
     //❓ Lab Question 11
-    //YOUR CODE HERE
+    //make return what was deleted
 }
 
 void main(){
